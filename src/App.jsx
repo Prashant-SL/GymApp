@@ -1,10 +1,20 @@
-import { useState } from 'react';
-import Routers from './Components/Routers';
+import React from 'react';
+import { Route, Routes } from "react-router";
+import ExerciseDetails from './pages/ExerciseDetails';
+import Home from './pages/Home';
+import Navbar from './Components/Navbar';
 
-function App() {
+
+const App = () => {
   return (
-    <Routers />
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/details/:id" element={<ExerciseDetails />} />
+      </Routes>
+    </>
   )
 }
 
-export default App
+export default App;
